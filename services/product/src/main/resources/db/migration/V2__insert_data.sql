@@ -1,10 +1,17 @@
--- Insert demo data into category
-INSERT INTO category (id, description, name) VALUES
-    (1, 'Devices for everyday use', 'Electronics'),
-    (2, 'Reading material in various genres', 'Books'),
-    (3, 'Wearable items', 'Clothing'),
-    (4, 'Consumable food and drinks', 'Groceries'),
-    (5, 'Toys and games for all ages', 'Toys');
+-- Create product table
+create table if not exists product
+(
+    id integer not null primary key,
+    description varchar(255),
+    name varchar(255),  -- Fixed: added comma here!
+    available_quantity double precision not null,
+    price numeric(38, 2),
+    category_id integer
+        constraint fk1lasdaladkhj references category
+);
+
+-- Create a sequence for product IDs, if using sequences
+create sequence if not exists product_seq increment by 50;
 
 -- Insert demo data into product
 INSERT INTO product (id, description, name, available_quantity, price, category_id) VALUES
@@ -18,7 +25,3 @@ INSERT INTO product (id, description, name, available_quantity, price, category_
     (8, 'Fantasy epic paperback', 'Dragons of Dawn', 60, 12.50, 2),
     (9, 'Kids wearable raincoat', 'Raincoat Jr.', 20, 19.95, 3),
     (10, 'Bag of organic apples', 'Apples (1kg)', 35, 4.20, 4);
-
--- If you use the sequences for id generation, skip 'id' in the insert and get value from sequence:
--- INSERT INTO category (id, description, name) VALUES (nextval('category_seq'), '...', '...');
--- INSERT INTO product (id, description, name, available_quantity, price, category_id) VALUES (nextval('product_seq'), '...', '...', ..., ..., ...);

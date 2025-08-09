@@ -1,3 +1,4 @@
+-- Create category table
 create table if not exists category
 (
     id integer not null primary key,
@@ -5,16 +6,13 @@ create table if not exists category
     name varchar(255)
 );
 
-create table if not exists product
-(
-    id integer not null primary key,
-    description varchar(255),
-    name varchar(255)
-    available_quantity double precision not null,
-    price numeric(38, 2),
-    category_id integer
-            constraint fk1lasdaladkhj references category
-);
-
+-- Create a sequence for category IDs, if using sequences
 create sequence if not exists category_seq increment by 50;
-create sequence if not exists product_seq increment by 50;
+
+-- Insert demo data into category
+INSERT INTO category (id, description, name) VALUES
+    (1, 'Devices for everyday use', 'Electronics'),
+    (2, 'Reading material in various genres', 'Books'),
+    (3, 'Wearable items', 'Clothing'),
+    (4, 'Consumable food and drinks', 'Groceries'),
+    (5, 'Toys and games for all ages', 'Toys');
