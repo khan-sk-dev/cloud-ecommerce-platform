@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public record OrderRequest(
 
@@ -18,6 +19,5 @@ public record OrderRequest(
         @NotBlank(message = "Customer should be present")
         String customerId,
         @NotEmpty(message = "You should at least purchase one product")
-        List<PurchaseRequest> products
-) {
+        List<PurchaseRequest> products) {
 }

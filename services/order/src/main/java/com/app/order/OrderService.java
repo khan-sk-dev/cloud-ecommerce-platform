@@ -1,5 +1,11 @@
 package com.app.order;
 
+import com.app.customer.CustomerClient;
+import com.app.order.exception.BuisnessException;
+import com.app.orderline.OrderLineRequest;
+import com.app.orderline.OrderLineService;
+import com.app.product.ProductClient;
+import com.app.product.PurchaseRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +13,31 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class OrderService {
 
-    public Integer createdOrdert(OrderRequest request) {
+    private final OrderRepository orderRepository;
+    private final CustomerClient customerClient;
+    private final ProductClient productClient;
+    private final OrderMapper orderMapper;
+    private final OrderLineService orderLineService;
 
+
+    public Integer createdOrdert(OrderRequest request) {
+        //check the customer OpenFeign
+        var customer = this.customerClient.findCustomerById(request.customerId()).orElseThrow(() -> new BuisnessException("Cannot create order:: No Customer exists with provided ID"));
+
+        //purschasae the products --> products-ms(REST-Template)
+        this.productClient.purchaseProducts(request.products());
+
+        //persist-order
+        var order = this.orderRepository.save(orderMapper.toOrder(request));
+
+        //persist order-lines
+        for (PurchaseRequest purchaseRequest : request.products()) {
+            orderLineService.saveOrderLine(new OrderLineRequest(null, order.getId(), purchaseRequest.productId(), purchaseRequest.quantity()));
+        }
+
+        // ToDo start payment-process
+
+        //send the order confirmation --> notificartion-ms(kafka)
+        return null;
     }
 }
