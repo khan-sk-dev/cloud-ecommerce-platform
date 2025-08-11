@@ -1,4 +1,4 @@
-package com.app.order.exception;
+package com.app.exception;
 
 
 import lombok.Data;

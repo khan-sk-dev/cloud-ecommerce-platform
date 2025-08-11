@@ -11,7 +11,7 @@ public class OrderLineService {
     private final OrderLineRepository orderLineRepository;
     private final OrdreLineMapper ordreLineMapper;
 
-    public void saveOrderLine(OrderLineRequest orderLineRequest) {
+    public Integer saveOrderLine(OrderLineRequest orderLineRequest) {
         var order = ordreLineMapper.toOrderLine(orderLineRequest);
         return orderLineRepository.save(order).getId();
     }

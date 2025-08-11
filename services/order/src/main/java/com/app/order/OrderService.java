@@ -1,7 +1,7 @@
 package com.app.order;
 
 import com.app.customer.CustomerClient;
-import com.app.order.exception.BuisnessException;
+import com.app.exception.BuisnessException;
 import com.app.orderline.OrderLineRequest;
 import com.app.orderline.OrderLineService;
 import com.app.product.ProductClient;
@@ -32,7 +32,14 @@ public class OrderService {
 
         //persist order-lines
         for (PurchaseRequest purchaseRequest : request.products()) {
-            orderLineService.saveOrderLine(new OrderLineRequest(null, order.getId(), purchaseRequest.productId(), purchaseRequest.quantity()));
+            orderLineService.saveOrderLine(
+                    new OrderLineRequest(
+                            null,
+                            order.getId(),
+                            purchaseRequest.productId(),
+                            purchaseRequest.quantity()
+                    )
+            );
         }
 
         // ToDo start payment-process

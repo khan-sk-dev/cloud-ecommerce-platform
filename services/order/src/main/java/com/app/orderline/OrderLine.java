@@ -1,6 +1,7 @@
 package com.app.orderline;
 
 
+import com.app.order.Order;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -27,7 +28,7 @@ public class OrderLine {
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private Orderer order;
+    private Order order;
     private Integer productId;
     private double quantity;
 }
