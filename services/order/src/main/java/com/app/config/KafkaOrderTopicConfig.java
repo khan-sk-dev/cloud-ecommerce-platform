@@ -15,5 +15,4 @@ public class KafkaOrderTopicConfig {
                 .name("order-topic")
                 .build();
     }
-
 }

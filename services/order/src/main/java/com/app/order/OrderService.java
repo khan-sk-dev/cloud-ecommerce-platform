@@ -1,5 +1,6 @@
 package com.app.order;
 
+import brave.Response;
 import com.app.customer.CustomerClient;
 import com.app.exception.BuisnessException;
 import com.app.kafka.OrderConfirmation;
@@ -8,8 +9,16 @@ import com.app.orderline.OrderLineRequest;
 import com.app.orderline.OrderLineService;
 import com.app.product.ProductClient;
 import com.app.product.PurchaseRequest;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -59,4 +68,17 @@ public class OrderService {
         //send the order confirmation --> notificartion-ms(kafka)
         return order.getId();
     }
+
+    public List<OrderResponse> findAll() {
+        return orderRepository.findAll().stream().map(orderMapper::fromOrder).collect(Collectors.toList());
+    }
+
+
+    public OrderResponse findById(Integer orderId) {
+        return orderRepository.findById(orderId)
+                .map(orderMapper::fromOrder)
+                .orElseThrow(() -> new EntityNotFoundException(String.format("No order found with provided ID: %d", orderId)));
+    }
+
+
 }
