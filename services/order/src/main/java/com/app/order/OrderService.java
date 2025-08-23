@@ -55,7 +55,7 @@ public class OrderService {
         }
 
         // ToDo start payment-process
-        orderProducer.sendOrderConfirmation(
+          orderProducer.sendOrderConfirmation(
                 new OrderConfirmation(
                         request.refrence(),
                         request.amount(),

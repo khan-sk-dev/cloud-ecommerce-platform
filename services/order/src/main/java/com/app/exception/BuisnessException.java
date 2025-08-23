@@ -4,12 +4,8 @@ package com.app.exception;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class BuisnessException extends RuntimeException {
-//    private final String msg;
-
-    public BuisnessException(String s) {
-
-    }
+    private final String msg;
 }
