@@ -16,3 +16,6 @@ spring:
       value-serializer: org.springframework.support.serializer.jsonSerializer
       properties:
         spring.json.type.mapping: paymentConfirmation:com.app.notification.PaymentNotificationRequest
+
+server:
+  port: 8060
