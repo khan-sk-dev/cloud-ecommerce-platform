@@ -31,7 +31,7 @@ public class EmailService {
     private final SpringTemplateEngine springTemplateEngine;
 
     @Async
-    public void sentPaymentSuccessEmail(String destinationEmail, String customerName, BigDecimal amount, String orderReference) throws MessagingException {
+    public void sendPaymentSuccessEmail(String destinationEmail, String customerName, BigDecimal amount, String orderReference) throws MessagingException {
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage, MULTIPART_MODE_RELATED, UTF_8.name());
         messageHelper.setFrom("contact@aliboucoding.com");

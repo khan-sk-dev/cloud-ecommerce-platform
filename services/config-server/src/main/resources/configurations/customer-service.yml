@@ -1,17 +1,23 @@
 spring:
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: customer-service
+
   data:
     mongodb:
-      username: root
-      password: root
       host: localhost
       port: 27017
       database: customer
+      username: root
+      password: root
       authentication-database: admin
+
   kafka:
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.support.serializer.jsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.type.mapping: orderConfirmation:com.app.kafka.OrderConfirmation
 
