@@ -153,8 +153,6 @@ graph TB
 
 </div>
 
----
-
 ## 🛠️ Tech Stack
 
 <div align="center">
