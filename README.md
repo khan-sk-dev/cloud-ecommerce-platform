@@ -1,4 +1,3 @@
-```markdown
 <div align="center">
   
 # 🛍️ Cloud E-Commerce Platform 🌟
@@ -1637,4 +1636,3 @@ SOFTWARE.
 [![GitHub issues](https://img.shields.io/github/issues/khan-sk-dev/cloud-ecommerce-platform)](https://github.com/khan-sk-dev/cloud-ecommerce-platform/issues)
 
 </div>
-```
