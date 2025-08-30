@@ -1,4 +1,3 @@
-```
 <div align="center">
 
 # 🌟 Cloud E-Commerce Platform 🌟
@@ -78,7 +77,6 @@ The **Cloud E-Commerce Platform** is a state-of-the-art, enterprise-grade e-comm
 </table>
 
 ### 💡 Perfect For
-
 - 🏢 **Enterprise E-Commerce** platforms
 - 🛍️ **Multi-vendor Marketplaces**
 - 📱 **Omnichannel Retail** solutions
@@ -99,9 +97,10 @@ The **Cloud E-Commerce Platform** is a state-of-the-art, enterprise-grade e-comm
 | 🛍️ **Shopping Cart** | Persistent cart with Redis caching | ✅ Complete |
 | 💳 **Payment Gateway** | Stripe, PayPal, Razorpay integration | ✅ Complete |
 | 📦 **Order Tracking** | Real-time status updates | ✅ Complete |
-| 👤 **User Profiles** | Comprehensive user management | ✅ Complete
-
-
+| 👤 **User Profiles** | Comprehensive user management | ✅ Complete |
+| 🔔 **Notifications** | Email, SMS, Push notifications | ✅ Complete |
+| 📊 **Analytics Dashboard** | Real-time business metrics | ✅ Complete |
+| 🎁 **Promotions & Discounts** | Coupon and offer management | ✅ Complete |
 
 ### 🛠️ Technical Features
 
@@ -242,6 +241,26 @@ sequenceDiagram
     N-->>C: Email/SMS Sent
 ```
 
+### 🏗️ Service Architecture Pattern
+
+Each microservice follows a clean, layered architecture:
+
+```text
+┌─────────────────────────────────────┐
+│             🌐 API Layer            │
+│        (Controllers & DTOs)         │
+├─────────────────────────────────────┤
+│           💼 Business Layer         │
+│        (Services & Domain)          │
+├─────────────────────────────────────┤
+│         🗄️ Persistence Layer       │
+│      (Repositories & Entities)      │
+├─────────────────────────────────────┤
+│        🔌 Integration Layer         │
+│    (Message Queues & External)     │
+└─────────────────────────────────────┘
+```
+
 ---
 
 ## 🛠️ Tech Stack
@@ -252,42 +271,42 @@ sequenceDiagram
 
 | Category | Technology | Purpose | Version |
 |----------|------------|---------|---------|
-| ☕ **Language** | Java | Primary Language | 17 LTS |
-| 🍃 **Framework** | Spring Boot | Microservices Framework | 3.2.0 |
-| 🌥️ **Cloud** | Spring Cloud | Cloud Native Tools | 2023.0.0 |
-| 🐳 **Containerization** | Docker | Container Runtime | 24.0+ |
-| ☸️ **Orchestration** | Kubernetes | Container Orchestration | 1.28+ |
-| 🔄 **Messaging** | Apache Kafka | Event Streaming | 3.6+ |
-| 🚪 **API Gateway** | Spring Cloud Gateway | API Management | 4.1.0 |
+| ☕ Language | Java | Primary Language | 17 LTS |
+| 🍃 Framework | Spring Boot | Microservices Framework | 3.2.0 |
+| 🌥️ Cloud | Spring Cloud | Cloud Native Tools | 2023.0.0 |
+| 🐳 Containerization | Docker | Container Runtime | 24.0+ |
+| ☸️ Orchestration | Kubernetes | Container Orchestration | 1.28+ |
+| 🔄 Messaging | Apache Kafka | Event Streaming | 3.6+ |
+| 🚪 API Gateway | Spring Cloud Gateway | API Management | 4.1.0 |
 
 ### 💾 Data Technologies
 
 | Database | Use Case | Why? |
 |----------|----------|------|
-| 🐘 **PostgreSQL** | Orders, Users | ACID compliance, Complex queries |
-| 🍃 **MongoDB** | Product Catalog | Flexible schema, Fast reads |
-| 🔴 **Redis** | Cart, Sessions | In-memory speed, TTL support |
-| 🔍 **Elasticsearch** | Search, Analytics | Full-text search, Analytics |
+| 🐘 PostgreSQL | Orders, Users | ACID compliance, Complex queries |
+| 🍃 MongoDB | Product Catalog | Flexible schema, Fast reads |
+| 🔴 Redis | Cart, Sessions | In-memory speed, TTL support |
+| 🔍 Elasticsearch | Search, Analytics | Full-text search, Analytics |
 
 ### 📊 Monitoring Stack
 
 | Tool | Purpose | Integration |
 |------|---------|-------------|
-| 📈 **Prometheus** | Metrics Collection | All services |
-| 📊 **Grafana** | Visualization | Prometheus data |
-| 🔍 **Zipkin** | Distributed Tracing | Request tracking |
-| 📝 **ELK Stack** | Log Aggregation | Centralized logging |
-| 🏥 **Spring Actuator** | Health Checks | Service health |
+| 📈 Prometheus | Metrics Collection | All services |
+| 📊 Grafana | Visualization | Prometheus data |
+| 🔍 Zipkin | Distributed Tracing | Request tracking |
+| 📝 ELK Stack | Log Aggregation | Centralized logging |
+| 🏥 Spring Actuator | Health Checks | Service health |
 
 ### 🔐 Security Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
-| 🔐 **Authentication** | OAuth2 + JWT | Token-based auth |
-| 🚪 **Authorization** | Spring Security | Role-based access |
-| 🔑 **Secrets** | HashiCorp Vault | Secret management |
-| 🛡️ **API Security** | Rate Limiting | DDoS protection |
-| 🔒 **Encryption** | TLS 1.3 | Data in transit |
+| 🔐 Authentication | OAuth2 + JWT | Token-based auth |
+| 🚪 Authorization | Spring Security | Role-based access |
+| 🔑 Secrets | HashiCorp Vault | Secret management |
+| 🛡️ API Security | Rate Limiting | DDoS protection |
+| 🔒 Encryption | TLS 1.3 | Data in transit |
 
 </div>
 
@@ -297,29 +316,18 @@ sequenceDiagram
 
 ### 📋 Prerequisites
 
-<table>
-<tr>
-<td width="50%">
-
 **🖥️ Development Machine**
-- 💻 **OS**: Linux/Mac/Windows (WSL2)
-- 💾 **RAM**: 16GB minimum
-- 💿 **Storage**: 20GB free space
-- 🌐 **Network**: Stable internet
-
-</td>
-<td width="50%">
+- 💻 **OS:** Linux/Mac/Windows (WSL2)
+- 💾 **RAM:** 16GB minimum
+- 💿 **Storage:** 20GB free space
+- 🌐 **Network:** Stable internet
 
 **🛠️ Required Software**
-- ☕ **Java JDK**: 17 or higher
-- 🐳 **Docker**: 24.0+
-- 🐳 **Docker Compose**: 2.20+
-- ☸️ **kubectl**: 1.28+ (optional)
-- 🔨 **Maven**: 3.9+
-
-</td>
-</tr>
-</table>
+- ☕ **Java JDK:** 17 or higher
+- 🐳 **Docker:** 24.0+
+- 🐳 **Docker Compose:** 2.20+
+- ☸️ **kubectl:** 1.28+ (optional)
+- 🔨 **Maven:** 3.9+
 
 ### ⚡ One-Click Deployment
 
@@ -333,7 +341,7 @@ cd cloud-ecommerce-platform
 ### 🎯 Step-by-Step Setup
 
 <details>
-<summary><b>🐳 Option 1: Docker Compose (Recommended for Development)</b></summary>
+<summary><strong>🐳 Option 1: Docker Compose (Recommended for Development)</strong></summary>
 
 ```bash
 # 1️⃣ Clone the repository
@@ -360,7 +368,7 @@ docker-compose up -d
 </details>
 
 <details>
-<summary><b>☸️ Option 2: Kubernetes Deployment (Production-like)</b></summary>
+<summary><strong>☸️ Option 2: Kubernetes Deployment (Production-like)</strong></summary>
 
 ```bash
 # 1️⃣ Ensure Kubernetes cluster is running
@@ -385,7 +393,7 @@ kubectl port-forward -n ecommerce-platform svc/api-gateway 8080:8080
 </details>
 
 <details>
-<summary><b>💻 Option 3: Local Development Setup</b></summary>
+<summary><strong>💻 Option 3: Local Development Setup</strong></summary>
 
 ```bash
 # 1️⃣ Start required databases
@@ -406,8 +414,256 @@ cd ../product-service && mvn spring-boot:run &
 cd ../cart-service && mvn spring-boot:run &
 cd ../order-service && mvn spring-boot:run &
 cd ../payment-service && mvn spring-boot:run &
+```
+
+</details>
+
+### 🎯 Verify Installation
+
+After startup, check these endpoints:
+
+| Service | URL | Status |
+|---------|-----|--------|
+| 🚪 API Gateway | http://localhost:8080 | [![Status](https://img.shields.io/badge/Status-Live-green)](http://localhost:8080) |
+| 🔍 Eureka Dashboard | http://localhost:8761 | [![Status](https://img.shields.io/badge/Status-Live-green)](http://localhost:8761) |
+| 📊 Zipkin Tracing | http://localhost:9411 | [![Status](https://img.shields.io/badge/Status-Live-green)](http://localhost:9411) |
+| 📈 Grafana Dashboard | http://localhost:3000 | [![Status](https://img.shields.io/badge/Status-Live-green)](http://localhost:3000) |
+| 📝 Kibana Logs | http://localhost:5601 | [![Status](https://img.shields.io/badge/Status-Live-green)](http://localhost:5601) |
+
+---
+
+## 📦 Services Deep Dive
+
+<details>
+<summary><strong>🚪 API Gateway Service</strong></summary>
+
+**Purpose:** Centralized entry point for all client requests
+
+**Tech Stack:** Spring Cloud Gateway + Redis
+
+**Key Features:**
+- ✅ Request routing and load balancing
+- ✅ Authentication and authorization
+- ✅ Rate limiting and throttling
+- ✅ Request/response transformation
+- ✅ Circuit breaker integration
+
+**Configuration:**
+```yaml
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/v1/products/**
+          filters:
+            - name: RateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+```
+
+</details>
+
+<details>
+<summary><strong>🛍️ Product Service</strong></summary>
+
+**Purpose:** Manages product catalog and inventory display
+
+**Tech Stack:** Spring Boot + MongoDB + Spring Data MongoDB + Elasticsearch
+
+**Key Features:**
+- ✅ Product CRUD operations
+- ✅ Category management
+- ✅ Advanced search and filtering
+- ✅ Product recommendations
+- ✅ Image management with CDN
+
+**API Endpoints:**
+```http
+GET    /api/v1/products           # List all products
+GET    /api/v1/products/{id}      # Get product details
+POST   /api/v1/products           # Create new product
+PUT    /api/v1/products/{id}      # Update product
+DELETE /api/v1/products/{id}      # Delete product
+GET    /api/v1/products/search    # Search products
+GET    /api/v1/products/categories # Get categories
+```
+
+</details>
+
+<details>
+<summary><strong>🛒 Cart Service</strong></summary>
+
+**Purpose:** Handles shopping cart operations
+
+**Tech Stack:** Spring Boot + Redis + Spring Data Redis
+
+**Key Features:**
+- ✅ Add/remove items from cart
+- ✅ Cart persistence with TTL
+- ✅ Price calculation
+- ✅ Cart sharing and merging
+- ✅ Abandoned cart recovery
+
+**API Endpoints:**
+```http
+GET    /api/v1/cart/{userId}         # Get user cart
+POST   /api/v1/cart/{userId}/items   # Add item to cart
+PUT    /api/v1/cart/{userId}/items/{itemId} # Update item quantity
+DELETE /api/v1/cart/{userId}/items/{itemId} # Remove item
+DELETE /api/v1/cart/{userId}         # Clear cart
+```
+
+</details>
+
+<details>
+<summary><strong>📦 Order Service</strong></summary>
+
+**Purpose:** Complete order lifecycle management
+
+**Tech Stack:** Spring Boot + PostgreSQL + JPA + Kafka Producer
+
+**Key Features:**
+- ✅ Order creation and management
+- ✅ Inventory validation (sync call)
+- ✅ Payment processing integration
+- ✅ Order status tracking
+- ✅ Event publishing for notifications
+
+**Order States:**
+```text
+PENDING → CONFIRMED → PROCESSING → SHIPPED → DELIVERED
+    ↓         ↓           ↓          ↓
+CANCELLED  CANCELLED   CANCELLED  RETURNED
+```
+
+**API Endpoints:**
+```http
+POST   /api/v1/orders             # Create new order
+GET    /api/v1/orders/{id}        # Get order details
+GET    /api/v1/orders/user/{id}   # Get user orders
+PUT    /api/v1/orders/{id}/status # Update order status
+DELETE /api/v1/orders/{id}        # Cancel order
+```
+
+</details>
+
+<details>
+<summary><strong>💳 Payment Service</strong></summary>
+
+**Purpose:** Multi-gateway payment processing
+
+**Tech Stack:** Spring Boot + PostgreSQL + Stripe/PayPal APIs
+
+**Key Features:**
+- ✅ Multiple payment gateway support
+- ✅ Secure payment processing
+- ✅ Payment status tracking
+- ✅ Refund management
+- ✅ Payment analytics
+
+**Supported Gateways:**
+- 💳 Stripe
+- 🅿️ PayPal
+- 💰 Razorpay
+- 🏦 Bank Transfer
+
+**API Endpoints:**
+```http
+POST   /api/v1/payments/process    # Process payment
+GET    /api/v1/payments/{id}       # Get payment status
+POST   /api/v1/payments/{id}/refund # Refund payment
+GET    /api/v1/payments/history    # Payment history
+```
+
+</details>
+
+<details>
+<summary><strong>👤 User Service</strong></summary>
+
+**Purpose:** User management and authentication
+
+**Tech Stack:** Spring Boot + PostgreSQL + Spring Security + JWT
+
+**Key Features:**
+- ✅ User registration and authentication
+- ✅ Profile management
+- ✅ Role-based access control
+- ✅ Password management
+- ✅ Social login integration
+
+**API Endpoints:**
+```http
+POST   /api/v1/users/register      # User registration
+POST   /api/v1/users/login         # User login
+GET    /api/v1/users/profile       # Get user profile
+PUT    /api/v1/users/profile       # Update profile
+POST   /api/v1/users/forgot-password # Password reset
+```
+
+</details>
+
+<details>
+<summary><strong>🔔 Notification Service</strong></summary>
+
+**Purpose:** Multi-channel customer notifications
+
+**Tech Stack:** Spring Boot + Kafka Consumer + Email/SMS APIs
+
+**Key Features:**
+- ✅ Email notifications
+- ✅ SMS alerts
+- ✅ Push notifications
+- ✅ Notification templates
+- ✅ Delivery tracking
+
+**Supported Events:**
+- 📧 Order confirmation
+- 📱 Shipping updates
+- ⚠️ Low stock alerts
+- 🎉 Promotional offers
+
+</details>
+
+---
+
+## 🔧 Configuration
+
+### 🌍 Environment Configuration
+
+| Environment | Purpose | Config Location | Features |
+|-------------|---------|-----------------|----------|
+| **local** | Local development | `application-local.yml` | In-memory DB, Mock services |
+| **dev** | Development server | Config Server | Full services, Test data |
+| **staging** | Pre-production | Config Server + Vault | Production-like, Test payments |
+| **prod** | Production | Config Server + Vault | Full security, Real payments |
+
+### ⚙️ Service Configuration
 
 ```yaml
+# Example: product-service configuration
+server:
+  port: ${PORT:8081}
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/products}
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
     export:
       prometheus:
         enabled: true
@@ -451,24 +707,20 @@ resilience4j:
 
 ### 🌐 API Gateway Endpoints
 
-<div align="center">
-
 | Service | Base Path | Description | Auth Required |
 |---------|-----------|-------------|---------------|
-| 🛍️ **Products** | `/api/v1/products` | Product catalog management | Partial |
-| 🛒 **Cart** | `/api/v1/cart` | Shopping cart operations | Yes |
-| 📦 **Orders** | `/api/v1/orders` | Order management | Yes |
-| 💳 **Payments** | `/api/v1/payments` | Payment processing | Yes |
-| 👤 **Users** | `/api/v1/users` | User management | Partial |
-| 🔔 **Notifications** | `/api/v1/notifications` | Notification preferences | Yes |
-
-</div>
+| 🛍️ Products | `/api/v1/products` | Product catalog management | Partial |
+| 🛒 Cart | `/api/v1/cart` | Shopping cart operations | Yes |
+| 📦 Orders | `/api/v1/orders` | Order management | Yes |
+| 💳 Payments | `/api/v1/payments` | Payment processing | Yes |
+| 👤 Users | `/api/v1/users` | User management | Partial |
+| 🔔 Notifications | `/api/v1/notifications` | Notification preferences | Yes |
 
 ### 📖 API Documentation Tools
 
-- **Swagger UI**: `http://localhost:8080/swagger-ui.html`
-- **OpenAPI Spec**: `http://localhost:8080/v3/api-docs`
-- **Postman Collection**: [Download Collection](./docs/postman-collection.json)
+- **Swagger UI:** http://localhost:8080/swagger-ui.html
+- **OpenAPI Spec:** http://localhost:8080/v3/api-docs
+- **Postman Collection:** [Download Collection](./docs/postman-collection.json)
 
 ### 🔑 Authentication
 
@@ -595,445 +847,5 @@ spec:
             memory: "512Mi"
             cpu: "250m"
           limits:
-            memory: "1Gi"
-            cpu: "500m"
-        livenessProbe:
-          httpGet:
-            path: /actuator/health/liveness
-            port: 8081
-          initialDelaySeconds: 30
-          periodSeconds: 10
-        readinessProbe:
-          httpGet:
-            path: /actuator/health/readiness
-            port: 8081
-          initialDelaySeconds: 20
-          periodSeconds: 5
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: product-service
-  namespace: ecommerce-platform
-spec:
-  selector:
-    app: product-service
-  ports:
-  - port: 8081
-    targetPort: 8081
-  type: ClusterIP
----
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: product-service-hpa
-  namespace: ecommerce-platform
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: product-service
-  minReplicas: 2
-  maxReplicas: 10
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 70
-  - type: Resource
-    resource:
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 80
-```
-
----
-
-## 📈 Monitoring & Observability
-
-### 📊 Metrics Dashboard
-
-<div align="center">
-
-**🎯 Key Performance Indicators (KPIs)**
-
-| Metric | Target | Current | Status |
-|--------|--------|---------|--------|
-| 🚀 **API Response Time** | < 200ms | 150ms | ✅ Healthy |
-| 📈 **Throughput** | > 1000 req/s | 1250 req/s | ✅ Healthy |
-| 💾 **Error Rate** | < 0.1% | 0.05% | ✅ Healthy |
-| 🔄 **Service Uptime** | > 99.9% | 99.95% | ✅ Healthy |
-
-</div>
-
-### 🔍 Distributed Tracing
-
-```mermaid
-gantt
-    title Request Trace: Place Order
-    dateFormat X
-    axisFormat %L ms
-    
-    section API Gateway
-    Request Reception    :0, 5
-    Auth Validation     :5, 15
-    
-    section Order Service
-    Order Creation      :20, 50
-    Inventory Check     :70, 30
-    
-    section Payment Service
-    Payment Processing  :100, 200
-    
-    section Notification
-    Email Trigger       :300, 50
-    
-    section Response
-    Client Response     :350, 10
-```
-
-### 📝 Logging Strategy
-
-```json
-{
-  "timestamp": "2024-01-15T10:30:45.123Z",
-  "level": "INFO",
-  "service": "order-service",
-  "traceId": "b3d4f6e8-9c2a-4b1d-8e3f-1a2b3c4d5e6f",
-  "spanId": "a1b2c3d4-e5f6-7890",
-  "userId": "user-123",
-  "action": "ORDER_CREATED",
-  "orderId": "ORD-2024-001234",
-  "amount": 299.99,
-  "duration": 145,
-  "message": "Order successfully created"
-}
-```
-
-### 🏥 Health Check Endpoints
-
-```bash
-# Check individual service health
-curl http://localhost:8080/api/v1/products/actuator/health
-
-# Response
-{
-  "status": "UP",
-  "components": {
-    "db": {
-      "status": "UP",
-      "details": {
-        "database": "MongoDB",
-        "validationQuery": "{ ping: 1 }"
-      }
-    },
-    "redis": {
-      "status": "UP",
-      "details": {
-        "version": "7.0.5"
-      }
-    },
-    "kafka": {
-      "status": "UP"
-    }
-  }
-}
-```
-
----
-
-## 🧪 Testing Strategy
-
-### 🔬 Test Pyramid
-
-<div align="center">
-
-```mermaid
-graph TB
-    E2E["🌐 E2E Tests<br/>50 tests"]
-    Integration["🔄 Integration Tests<br/>200 tests"]
-    Unit["🔬 Unit Tests<br/>1000+ tests"]
-    
-    E2E --> Integration
-    Integration --> Unit
-    
-    style
-
-```mermaid
-    style E2E fill:#ff6b6b,stroke:#333,stroke-width:2px
-    style Integration fill:#4ecdc4,stroke:#333,stroke-width:2px
-    style Unit fill:#45b7d1,stroke:#333,stroke-width:2px
-```
-
-</div>
-
-### 🧪 Test Coverage Report
-
-| Service | Unit Tests | Integration Tests | E2E Tests | Total Coverage |
-|---------|------------|-------------------|-----------|----------------|
-| 🚪 API Gateway | 85% | 78% | ✅ | **82%** |
-| 🛍️ Product Service | 92% | 85% | ✅ | **89%** |
-| 🛒 Cart Service | 90% | 82% | ✅ | **87%** |
-| 📦 Order Service | 88% | 80% | ✅ | **85%** |
-| 💳 Payment Service | 95% | 88% | ✅ | **92%** |
-| 👤 User Service | 87% | 79% | ✅ | **84%** |
-
-### 🚀 Running Tests
-
-```bash
-# Run all tests
-./mvnw clean test
-
-# Run unit tests only
-./mvnw test -Dtest.groups=unit
-
-# Run integration tests
-./mvnw test -Dtest.groups=integration
-
-# Run specific service tests
-./mvnw test -pl :product-service
-
-# Run with coverage report
-./mvnw clean test jacoco:report
-
-# Run E2E tests
-cd e2e-tests && npm test
-
-# Run performance tests
-./mvnw gatling:test
-```
-
-### 📊 Performance Testing
-
-```groovy
-// Gatling Performance Test Example
-class OrderServiceSimulation extends Simulation {
-  
-  val httpProtocol = http
-    .baseUrl("http://localhost:8080")
-    .acceptHeader("application/json")
-    
-  val scn = scenario("Order Creation Load Test")
-    .exec(
-      http("Create Order")
-        .post("/api/v1/orders")
-        .body(ElFileBody("order-request.json"))
-        .check(status.is(201))
-    )
-    
-  setUp(
-    scn.inject(
-      rampUsersPerSec(10) to 100 during (2 minutes),
-      constantUsersPerSec(100) during (5 minutes),
-      rampUsersPerSec(100) to 10 during (2 minutes)
-    )
-  ).protocols(httpProtocol)
-   .assertions(
-     global.responseTime.max.lt(3000),
-     global.successfulRequests.percent.gt(99)
-   )
-}
-```
-
----
-
-## 🔐 Security
-
-### 🛡️ Security Architecture
-
-```mermaid
-graph TB
-    Client[👤 Client] --> WAF[🛡️ Web Application Firewall]
-    WAF --> LB[⚖️ Load Balancer/TLS Termination]
-    LB --> Gateway[🚪 API Gateway]
-    
-    subgraph "🔐 Security Layer"
-        Gateway --> Auth[🔑 OAuth2/JWT Auth]
-        Auth --> RateLimit[🚦 Rate Limiter]
-        RateLimit --> RBAC[👮 Role-Based Access]
-    end
-    
-    RBAC --> Services[📦 Microservices]
-    
-    subgraph "🔒 Data Security"
-        Services --> Encryption[🔐 Data Encryption]
-        Services --> Vault[🗝️ HashiCorp Vault]
-        Services --> Audit[📝 Audit Logging]
-    end
-    
-    style WAF fill:#ff6b6b
-    style Auth fill:#4ecdc4
-    style Vault fill:#f9ca24
-```
-
-### 🔑 Security Features
-
-| Feature | Implementation | Status |
-|---------|----------------|--------|
-| 🔐 **Authentication** | OAuth2 + JWT | ✅ Implemented |
-| 🔑 **Authorization** | Spring Security + RBAC | ✅ Implemented |
-| 🚦 **Rate Limiting** | Resilience4j | ✅ Implemented |
-| 🛡️ **API Security** | CORS, CSRF Protection | ✅ Implemented |
-| 🔒 **Data Encryption** | AES-256 at rest, TLS 1.3 in transit | ✅ Implemented |
-| 🗝️ **Secret Management** | HashiCorp Vault | ✅ Implemented |
-| 📝 **Audit Logging** | Comprehensive audit trail | ✅ Implemented |
-| 🚨 **Security Scanning** | OWASP ZAP, SonarQube | ✅ Implemented |
-
-### 🔐 API Security Example
-
-```java
-@RestController
-@RequestMapping("/api/v1/admin")
-@PreAuthorize("hasRole('ADMIN')")
-public class AdminController {
-    
-    @PostMapping("/products")
-    @RateLimiter(name = "admin-api")
-    @AuditLog(action = "CREATE_PRODUCT")
-    public ResponseEntity<Product> createProduct(
-            @Valid @RequestBody ProductDTO productDTO,
-            @AuthenticationPrincipal User user) {
-        
-        // Validate permissions
-        securityService.validatePermission(user, "PRODUCT_CREATE");
-        
-        // Create product with audit trail
-        Product product = productService.create(productDTO, user);
-        
-        return ResponseEntity.created(
-            URI.create("/api/v1/products/" + product.getId())
-        ).body(product);
-    }
-}
-```
-
----
-
-## 🤝 Contributing
-
-We love contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### 🌟 How to Contribute
-
-1. **🍴 Fork** the repository
-2. **🌿 Create** your feature branch
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```
-3. **💻 Make** your changes
-4. **✅ Test** your changes thoroughly
-   ```bash
-   ./mvnw clean verify
-   ```
-5. **📝 Commit** your changes
-   ```bash
-   git commit -m 'feat: Add some AmazingFeature'
-   ```
-6. **🚀 Push** to the branch
-   ```bash
-   git push origin feature/AmazingFeature
-   ```
-7. **🎯 Open** a Pull Request
-
-### 📋 Contribution Guidelines
-
-- ✅ Follow [Conventional Commits](https://www.conventionalcommits.org/)
-- ✅ Write unit tests for new features
-- ✅ Update documentation
-- ✅ Ensure all tests pass
-- ✅ Add meaningful commit messages
-- ✅ Keep PRs focused and small
-
-### 🐛 Reporting Bugs
-
-Found a bug? Please [open an issue](https://github.com/khan-sk-dev/cloud-ecommerce-platform/issues/new) with:
-
-- 🔍 Clear description
-- 📋 Steps to reproduce
-- 💻 Environment details
-- 📸 Screenshots (if applicable)
-
-### 💡 Feature Requests
-
-Have an idea? We'd love to hear it! Please [open a feature request](https://github.com/khan-sk-dev/cloud-ecommerce-platform/issues/new?template=feature_request.md) with:
-
-- 🎯 Clear use case
-- 💡 Proposed solution
-- 🤔 Alternatives considered
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 Khan SK Dev
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
-## 🙏 Acknowledgments
-
-### 🌟 Special Thanks To
-
-- **Spring Team** - For the amazing Spring ecosystem
-- **Netflix OSS** - For pioneering microservices patterns
-- **CNCF** - For cloud-native technologies
-- **Open Source Community** - For continuous support
-
-### 📚 Resources & Inspiration
-
-- [Spring Cloud Documentation](https://spring.io/projects/spring-cloud)
-- [Microservices.io](https://microservices.io/)
-- [12 Factor App](https://12factor.net/)
-- [Cloud Native Computing Foundation](https://www.cncf.io/)
-
-### 🏆 Contributors
-
-<a href="https://github.com/khan-sk-dev/cloud-ecommerce-platform/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=khan-sk-dev/cloud-ecommerce-platform" />
-</a>
-
----
-
-<div align="center">
-
-## 🚀 Ready to Build Something Amazing?
-
-<h3>⭐ Star this repository to show your support! ⭐</h3>
-
-[![Star History Chart](https://api.star-history.com/svg?repos=khan-sk-dev/cloud-ecommerce-platform&type=Date)](https://star-history.com/#khan-sk-dev/cloud-ecommerce-platform&Date)
-
-### 📊 Project Stats
-
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/khan-sk-dev/cloud-ecommerce-platform?style=for-the-badge)
-![GitHub last commit](https://img.shields.io/github/last-commit/khan-sk-dev/cloud-ecommerce-platform?style=for-the-badge)
-![GitHub code size](https://img.shields.io/github/languages/code-size/khan-sk-dev/cloud-ecommerce-platform?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/khan-sk-dev/cloud-ecommerce-platform?style=for-the-badge)
-
 
 ```
